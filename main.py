@@ -44,7 +44,7 @@ def get_brushes(blend_fp):
     cur_brushes = [b.name for b in bpy.data.brushes]
     with bpy.data.libraries.load(str(blend_fp), link=False) as (data_from, data_to):
         # load brushes starting     with 'tex' prefix if there are not already there
-        data_to.brushes = [b for b in data_from.brushes if b.startswith('P') and not b in cur_brushes]
+        data_to.brushes = [b for b in data_from.brushes if not b in cur_brushes]
         data_to.materials = [m for m in data_from.materials if m]
         # Add holdout
         if 'z_holdout' in data_from.brushes and not 'z_holdout' in cur_brushes:
