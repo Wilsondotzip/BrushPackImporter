@@ -71,7 +71,7 @@ class GP_OT_install_brush_pack(bpy.types.Operator):
         import os
         temp = tempfile.gettempdir()
         self.temp = Path(temp)
-        self.brushzip = "C:\\Users\\wspal\\AppData\\Roaming\\Blender Foundation\\Blender\\3.6\\scripts\\B4C_PencilBrushes_v2.zip"
+        self.brushzip = "Path to zip file"
         print(f'{self.brushzip} is up do date, appending brushes')
         self._install_from_zip()
         return {"FINISHED"}
